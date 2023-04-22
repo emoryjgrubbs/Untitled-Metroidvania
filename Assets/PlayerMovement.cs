@@ -114,14 +114,17 @@ public class PlayerMovement : MonoBehaviour
         if(moveInput.x * faceDirection.x < 0){
             turn();
         }
-        if(moveInput.y == 0){
+        if(moveInput.y == 0f){
             faceDirection.y = 0;    //looking horizontally
+            //Debug.Log("test, no facing"); //working thumbs up
         }
-        else if(moveInput.y < 0){ 
+        else if(moveInput.y < 0f){ 
             faceDirection.y = -1;   //looking down
+            //Debug.Log("test, facing down");
         }
         else{
             faceDirection.y = 1;    //looking up
+            //Debug.Log("test, facing up");
         }
         //attack check
         if(Input.GetKeyDown(KeyCode.J)){    //need to make this rebindable, but for current simplicity
